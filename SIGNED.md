@@ -3,9 +3,9 @@
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iEYEABECAAYFAlRP3P0ACgkQte6EFif3vzf9LgCfakTxrEjbV8NcteOBKTBYOz2Y
-YnMAniecA/+6wYvYjHpczyrt0UV4JHIA
-=RhFm
+iEYEABECAAYFAlRP4JAACgkQte6EFif3vzcdqACgmVOZe8PW4bCc201fWeDw9gge
+qk8An24RJ3DbF6IzMBDPe3ALB2RLRgbf
+=Q38+
 -----END PGP SIGNATURE-----
 
 ```
@@ -17,11 +17,12 @@ YnMAniecA/+6wYvYjHpczyrt0UV4JHIA
 #### Expect
 
 ```
-size   exec  file          contents                                                        
-             ./                                                                            
-800            Dockerfile  4537a1c7533bad601a3eaa0e0fe6055c15a6b0adcb653b6fb5060e55a0d87af7
-35121          LICENSE     e1c0ad728983d8a57335e52cf1064f1affd1d454173d8cebd3ed8b4a72b48704
-1730           README.md   10c9cf7929690dd3fcfa803357460a4e13de4a790e2f43940c04e92c8fe18451
+size   exec  file             contents                                                        
+             ./                                                                               
+824            Dockerfile     4f3cc3e6aebcd856813ac2e786b53db22488f25e3626b06347591effca8e72ba
+35121          LICENSE        e1c0ad728983d8a57335e52cf1064f1affd1d454173d8cebd3ed8b4a72b48704
+1730           README.md      10c9cf7929690dd3fcfa803357460a4e13de4a790e2f43940c04e92c8fe18451
+104    x       run-phpfpm.sh  8314f144ab86021e4bd0448ef19824b9446e59a2119f2f32e0286699696f2931
 ```
 
 #### Ignore
