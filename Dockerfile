@@ -21,7 +21,7 @@ priority=1\n\
 RUN yum install -y $PHP ; yum clean all
 RUN useradd -u 48 -U --home /var/www -M --shell /sbin/nologin apache
 RUN sed -i '/^listen\ =\ 127.0.0.1/c\listen = 9000' $PHPCONF
-RUN sed -i '/^listen.allowed_clients/c\listen.allowed_clients = ' $PHPCONF
+RUN sed -i '/^listen.allowed_clients/c\; listen.allowed_clients = ' $PHPCONF
 
 EXPOSE 9000
 
