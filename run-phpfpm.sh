@@ -1,5 +1,7 @@
 #!/bin/bash
 
+/config-ssmtp.sh
+
 if [[ ! -d /var/log/php-fpm ]] ; then
   mkdir -p /var/log/php-fpm
 fi
