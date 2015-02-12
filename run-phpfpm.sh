@@ -2,7 +2,7 @@
 
 LOGDIR='/var/log/php-fpm'
 THREADYAML='/conf/threads.yaml'
-HOSTCONF='www.conf'
+HOSTCONF='/etc/php-fpm.d/www.conf'
 
 f_set_threads () {
   if [[ $1 == '--default' ]] ; then

@@ -3,9 +3,9 @@
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iEYEABECAAYFAlTKrpUACgkQte6EFif3vzd9xwCfbpl6IHHwHTSY+NEh5WW536ku
-dG0AoOruYL6bCunuyCUHOTDTyKOwNmI0
-=HENy
+iEYEABECAAYFAlTc20gACgkQte6EFif3vzd2kgCdGZrHvxLjGwPK6Fg5XKZgCqm8
+ZGwAoOKLFE9T00CuHlwlPBGK/gMXrg6H
+=0zvc
 -----END PGP SIGNATURE-----
 
 ```
@@ -23,7 +23,7 @@ size   exec  file               contents
 35121          LICENSE          e1c0ad728983d8a57335e52cf1064f1affd1d454173d8cebd3ed8b4a72b48704
 1735           README.md        8d4c94c21dcef724fd6bd6d51d12ddac52049fc00987ff35591be695b9eea612
 858    x       config-ssmtp.sh  7c6751090bbf595682ceba3dc8151ceead2d3de16b8a280460af74a7a574af33
-1245   x       run-phpfpm.sh    9bb56372a90ddccca2c8fe80b60830e0f985a4e1463b76550ea641731f22bd24
+1260   x       run-phpfpm.sh    676a5c9e8f94e6565abab073e60c9cc934bfcaf15091752af85b8596c73d7f57
 ```
 
 #### Ignore
