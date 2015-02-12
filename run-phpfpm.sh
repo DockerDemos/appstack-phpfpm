@@ -11,11 +11,12 @@ f_set_threads () {
     MAX_SPARE='10'
     MAX_REQUESTS='500'
   else
-    MAX_CHILD="$(awk '/fpm_fpm_maxchild/ {print $2}' $THREADYML)"
-    MIN_SPARE="$(awk '/fpm_fpm_maxchild/ {print $2}' $THREADYML)"
-    MAX_SPARE="$(awk '/fpm_fpm_maxchild/ {print $2}' $THREADYML)"
-    MAX_REQUESTS="$(awk '/fpm_fpm_maxchild/ {print $2}' $THREADYML)"
+    MAX_CHILD="$(awk '/fpm_maxchild/ {print $2}' $THREADYAML)"
+    MIN_SPARE="$(awk '/fpm_minspare/ {print $2}' $THREADYAML)"
+    MAX_SPARE="$(awk '/fpm_maxspare/ {print $2}' $THREADYAML)"
+    MAX_REQUESTS="$(awk '/fpm_maxreqperchild/ {print $2}' $THREADYAML)"
   fi
+  sed -i 's/^pm.start_servers/;pm.start_servers/' $HOSTCONF
   sed -i "s/.*pm.max_children\ =\ .*/pm.max_children = $MAX_CHILD/" $HOSTCONF
   sed -i "s/.*pm.min_spare_servers\ =\ .*/pm.min_spare_servers = $MIN_SPARE/" $HOSTCONF
   sed -i "s/.*pm.max_spare_servers\ =\ .*/pm.max_spare_servers = $MAX_SPARE/" $HOSTCONF
