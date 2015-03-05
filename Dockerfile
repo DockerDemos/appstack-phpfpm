@@ -6,7 +6,7 @@ FROM centos:centos7
 MAINTAINER Chris Collins <collins.christopher@gmail.com>
 
 ENV REPO http://dl.iuscommunity.org/pub/ius/stable/CentOS/\$releasever/\$basearch/
-ENV PHP php56u-fpm php56u-gd php56u-mbstring php56u-mysql php56u-pdo php56u-xml
+ENV PHP php56u-fpm php56u-gd php56u-ldap php56u-mbstring php56u-mysql php56u-pdo php56u-xml
 ENV PHPCONF /etc/php-fpm.d/www.conf
 ENV SSMTP ssmtp
 
