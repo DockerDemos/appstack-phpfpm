@@ -33,6 +33,7 @@ RUN yum install -y $PHP $SSMTP; yum clean all
 RUN useradd -u 48 -U --home /var/www -M --shell /sbin/nologin apache
 RUN sed -i '/^listen\ =\ 127.0.0.1/c\listen = 9000' $PHPCONF
 RUN sed -i '/^listen.allowed_clients/c\; listen.allowed_clients = ' $PHPCONF
+RUN sed -i '/^expose_php = On/c\expose_php = Off' $PHPCONF
 ADD run-phpfpm.sh /run-phpfpm.sh
 ADD config-ssmtp.sh /config-ssmtp.sh
 

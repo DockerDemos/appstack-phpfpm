@@ -3,9 +3,9 @@
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1
 
-iEYEABECAAYFAlT4k8AACgkQte6EFif3vzdv3QCgnv1Dc0KlOx9r5jfnGK7as8xv
-EQUAoOiluuP1Hf4O8+Ycbxvh5UOybGUI
-=VSCy
+iEYEABECAAYFAlULDLUACgkQte6EFif3vzeOxQCgvgD026cte7mFce9zRjNSQnlE
+xZ4AoOBkoiPc4yjhBgkw+msqs40YFL+I
+=h6N4
 -----END PGP SIGNATURE-----
 
 ```
@@ -19,7 +19,7 @@ EQUAoOiluuP1Hf4O8+Ycbxvh5UOybGUI
 ```
 size   exec  file               contents                                                        
              ./                                                                                 
-1252           Dockerfile       a32618c0b9dcf66b2a164219bbb1a45bab4ab5be23c0be8e8427578545c76e2e
+1311           Dockerfile       fda61f2da9ccc7589cb24fd52585f3d26f5f998e9812ede33dab7c980eb68863
 35121          LICENSE          e1c0ad728983d8a57335e52cf1064f1affd1d454173d8cebd3ed8b4a72b48704
 1735           README.md        8d4c94c21dcef724fd6bd6d51d12ddac52049fc00987ff35591be695b9eea612
 858    x       config-ssmtp.sh  7c6751090bbf595682ceba3dc8151ceead2d3de16b8a280460af74a7a574af33
