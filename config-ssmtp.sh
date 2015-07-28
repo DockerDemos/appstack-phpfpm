@@ -29,6 +29,7 @@ EOF
     SSMTPMAIL='sendmail_path = \/usr\/sbin\/ssmtp -t'
 
     /bin/sed -i "/$SENDMAIL/c\\$SSMTPMAIL" $PHPINI
+    echo "${SMTPSERVER}" >> $CHECKFILE
 
   fi
 fi
