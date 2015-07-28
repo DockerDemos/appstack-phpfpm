@@ -23,13 +23,12 @@ FromLineOverride=YES
 UseTLS=YES
 TLS_CA_FILE=/etc/pki/tls/certs/ca-bundle.crt
 EOF
-  
+
     PHPINI='/etc/php.ini'
-    SENDMAIL='sendmail_path = \/usr\/sbin\/sendmail -t -i'
+    SENDMAIL='^sendmail_path = '
     SSMTPMAIL='sendmail_path = \/usr\/sbin\/ssmtp -t'
-  
+
     /bin/sed -i "/$SENDMAIL/c\\$SSMTPMAIL" $PHPINI
-    echo "${SMTPSERVER}" >> $CHECKFILE
-  
+
   fi
 fi
