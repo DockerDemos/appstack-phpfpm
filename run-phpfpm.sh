@@ -41,6 +41,6 @@ else
 fi
 
 # Run the SSMTP setup script
-/bin/bash /config-ssmtp.sh
+/bin/bash -x /config-ssmtp.sh
 
 exec /usr/sbin/php-fpm -F
