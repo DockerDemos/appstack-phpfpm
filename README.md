@@ -1,6 +1,8 @@
 appstack-phpfpm
 ===============
 
+_v2.0 - 20160330_
+
 Docker images for running a PHP-FPM container; for use with other AppStack images
 
 ##Running##
@@ -22,6 +24,13 @@ Run the Apache container, with volumes from the data container, ports 80 and 443
     sudo docker run -p 80:80 -p 443:443 --name web --link fpm:fpm --volumes-from data -d apache
 
 Finally, place whatever content you want served into /srv/html, and you're done.
+
+### Changelog ###
+
+*20160330 - v2.0* 
+
+1. Changed conf to run as user Apache and group Apache to work with Apache container
+2. Added access log creation
 
 ##Issues##
 
