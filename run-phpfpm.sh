@@ -27,9 +27,12 @@ f_set_threads () {
 if [[ ! -d $LOGDIR ]] ; then
   mkdir -p $LOGDIR
 fi
-if [[ ! -f $LOGDIR/error.log ]] ; then
-  touch $LOGDIR/error.log
-fi
+
+for file in error.log access.log
+  do if [[ ! -f ${LOGDIR}/${file} ]]
+    then touch ${LOGDIR}/${file}
+  fi
+done
 
 chown -R apache.root $LOGDIR
 
