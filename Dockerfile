@@ -31,12 +31,17 @@ gpgcheck=0\n\
 
 RUN yum install -y $PHP $SSMTP; yum clean all
 RUN useradd -u 48 -U --home /var/www -M --shell /sbin/nologin apache
+
+# Session dir Defaults to root.php-fpm, apache can't write
+RUN usermod -a -G php-fpm apache
+
 RUN sed -i '/^listen\ =\ 127.0.0.1/c\listen = 9000' $PHPCONF
 RUN sed -i '/^listen.allowed_clients/c\; listen.allowed_clients = ' $PHPCONF
 RUN sed -i '/^expose_php = On/c\expose_php = Off' $PHPCONF
 RUN sed -i '/^user = php-fpm/c\user = apache' $PHPCONF
 RUN sed -i '/^group = php-fpm/c\group = apache' $PHPCONF
 RUN sed -i '/^;access.log = log\/$pool.access.log/c\access.log = /var/log/php-fpm/access.log' $PHPCONF
+
 ADD run-phpfpm.sh /run-phpfpm.sh
 ADD config-ssmtp.sh /config-ssmtp.sh
 
