@@ -1,0 +1,6 @@
+[ius]
+name=IUS Community Repository
+baseurl=http://dl.iuscommunity.org/pub/ius/stable/CentOS/$releasever/$basearch/ 
+enabled=1
+gpgcheck=0
+priority=1

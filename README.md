@@ -1,7 +1,7 @@
 appstack-phpfpm
 ===============
 
-_v2.0 - 20160330_
+_v3.0 - 20160908_
 
 Docker images for running a PHP-FPM container; for use with other AppStack images
 
@@ -26,6 +26,13 @@ Run the Apache container, with volumes from the data container, ports 80 and 443
 Finally, place whatever content you want served into /srv/html, and you're done.
 
 ### Changelog ###
+
+*20160908 - v3.0*
+
+1. Moved epel and ius repo config out of Dockerfile into their own file
+2. Renamed ssmtp config script and phpfpm init script
+3. Placed phpfpm init script in directory structure that would work with runit init system if installed in a base image
+4. Re-wrote ssmtp and phpfpm scripts for readability
 
 *20160330 - v2.0* 
 

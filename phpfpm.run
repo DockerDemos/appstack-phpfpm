@@ -1,0 +1,60 @@
+#!/bin/bash
+
+set -e
+
+set_fpm_threads () {
+  local thread_config='/conf/threads.yaml'
+  local host_config='/etc/php-fpm.d/www.conf'
+
+  if [[ ! -f ${thread_config} ]]
+  then
+    local max_child='20'
+    local min_spare='5'
+    local max_spare='10'
+    local max_requests='500'
+  else
+    local max_child="$(awk '/fpm_maxchild/ {print $2}' ${thread_config})"
+    local min_spare="$(awk '/fpm_minspare/ {print $2}' ${thread_config})"
+    local max_spare="$(awk '/fpm_maxspare/ {print $2}' ${thread_config})"
+    local max_requests="$(awk '/fpm_maxreqperchild/ {print $2}' ${thread_config})"
+  fi
+
+  sed -i 's/^pm.start_servers/;pm.start_servers/' ${host_config} # PHP-FPM will set the start_servers (no math on our end)
+  sed -i "s/.*pm.max_children\ =\ .*/pm.max_children = ${max_child}/" ${host_config}
+  sed -i "s/.*pm.min_spare_servers\ =\ .*/pm.min_spare_servers = ${min_spare}/" ${host_config}
+  sed -i "s/.*pm.max_spare_servers\ =\ .*/pm.max_spare_servers = ${max_spare}/" ${host_config}
+  sed -i "s/.*pm.max_requests\ =\ .*/pm.max_requests = ${max_requests}/" ${host_config}
+
+}
+
+setup_logs () {
+  local logdir='/var/log/php-fpm'
+
+  if [[ ! -d $logdir ]] ; then
+    mkdir -p $logdir
+  fi
+
+  for file in error.log access.log
+  do
+    if [[ ! -f ${logdir}/${file} ]]
+      then touch ${logdir}/${file}
+    fi
+  done
+
+  chown -R apache.root $logdir
+}
+
+
+
+
+main () {
+  source /ssmtp-config.sh
+
+  setup_logs
+  set_fpm_threads
+
+  exec /usr/sbin/php-fpm -F
+}
+
+
+main "$@"
