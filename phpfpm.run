@@ -44,9 +44,6 @@ setup_logs () {
   chown -R apache.root $logdir
 }
 
-
-
-
 main () {
   source /ssmtp-config.sh
 
